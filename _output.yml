@@ -1,8 +1,14 @@
 bookdown::gitbook:
-  css: style.css
   config:
+    search:
+      engine: lunr
+    download: ["pdf", "epub", "mobi"]
     toc:
+      scroll_highlight: true
       before: |
-        <li><a href="./">SHORT TITLE HERE</a></li>
+        <li><a >Section</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    fontsettings: 
+      theme: night
+  css: style.css
+  

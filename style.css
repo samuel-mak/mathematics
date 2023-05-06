@@ -3,12 +3,107 @@ p.caption {
   margin-top: 10px;
 }
 p code {
-  white-space: inherit;
+  white-space: normal;
 }
 pre {
   word-break: normal;
   word-wrap: normal;
 }
 pre code {
-  white-space: inherit;
+  white-space: nowrap;
 }
+.book .book-header h1 {
+  opacity: 1;
+  text-align: left;
+}
+textarea {
+    width: 3000px;
+}
+input[type="text"] {
+    width: 300px;
+}
+
+html, body {
+  margin:0px;
+  height:100%;
+  width: 100%;
+}
+
+/*html {
+  cursor: url('image/jk.svg'), auto;	
+}*/
+
+
+
+html, body, input[type="text"] {
+    width: 100%;
+}
+
+.page-wrapper {margin-left: 0px;}
+
+.normal {width: 135%;}
+p {
+  font-family: Helvetica Neue; font-size: 15px; width: 100%; 
+}
+
+pre code {
+  white-space: pre-wrap;
+}
+
+
+
+li {
+  font-family: Helvetica Neue; font-size: 15px; width: 100%; margin: 0px; padding: 0em; line-height: 18px;
+}
+
+
+li.a {
+  list-style-type: square; margin-top: 100px;
+
+}
+
+ul.a {
+  list-style-type: square; margin-top: 100px;
+}
+
+
+  
+code {padding: 0px; tab-size: 8; color: green;}
+
+
+pre{width: inherit; font-size: 12px; line-height: 8px; margin-top: 0px; display: block; overflow-x: auto; color: green;}
+
+
+code[data-lang]::before { content: attr(data-lang);}
+
+
+
+details {
+  user-select: text;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  color: inherit;
+  width: 80%;
+  display: block;
+}
+
+summary {
+  display: block;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+a:link{
+  color:#00CFA6;
+}
+
+mark{
+  background-color: #00B1A1; 
+  opacity: 0.5;
+  border-radius: 2.5px;
+}
+
+img{border-radius: 10px;}

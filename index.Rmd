@@ -1,9 +1,94 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAME HERE"
-date: "`r Sys.Date()`"
+title: "A Level Mathematics"
+author: "Samuel Mak"
+date: "Last Updated: `r format(Sys.time(), '%d-%b-%Y | %X')`"
+
 site: bookdown::bookdown_site
+output: 
+  bookdown::html_book:
+    theme: darkly
+    highlight: monochrome
+    code_folding: hide
+    extra_dependencies: ['amsmath', 'upgreek']
+
 ---
 
-# Down the rabbit-hole
+
+<p style = "margin-bottom: 0px; font-size: 30px; ">**Algebra**</p>
+
+
+
+
+<p style = "margin-bottom: 0px; font-size: 20px; ">**Indices**</p>
+
+- **Index**
+  - Aka Power or Exponent 
+  - Index is the number of times a number (the base) is multiplied by itself 
+  - Index is the factor by which a value is powered 
+- **Mathematics**
+  - $x^n$
+    - ***Where***
+      - $x$ - The base
+      - $n$ - The index 
+- **The Laws of Indices for indices of the same base)**
+  - $a^m \times a^n = a^{m + n}$
+  - $\displaystyle \frac{a^m}{a^n} = a^{m-n}$
+  - $\left( a^m \right)^n = a^{mn}$
+  - $\left( ab \right)^n = a^n b^n$
+  - $\displaystyle a^{\frac{n}{m}} = \sqrt[m]{a^n}$
+  - $\displaystyle a^{-m} = \frac{1}{a^m}$
+  - $a^0 = 1$
+  
+  
+  
+<p style = "margin-bottom: 0px; font-size: 20px; ">**$n^{th}$ root of a number**</p>
+
+- **$n^{th}$ root of a number**
+  - **Definition**
+    - The $n^{th}$ root of a number $x$ (expressed as $\sqrt[n]{x}$) is a number $r$ such that raising it ($r$) to the power $n$ will yield $x$ 
+  - **Mathematics**
+    - $\displaystyle \begin{aligned} \sqrt[n]{x} &= r \\ r^n &= x \end{aligned}$
+      - ***Where***
+        - $\sqrt{}$ - The radical symbol or radix 
+        - $n$ - The index 
+        - $x$ - The radicand
+- **Surd**
+  - **Definition**
+    - An unresoled root that is expressed in a radical symbol 
+    - A radical expression - Any expression containing the radical symbol 
+
+
+
+
+
+
+Should a scale of 1 to 4 be analysed categorically or numerically 
+
+Spearman's rho 
+Cramer's V
+ANOVA
+
+
+
+
+
+
+
+
+<p style = "margin-bottom: 0px; font-size: 20px; ">**Factorisation**</p>
+
+- **Concepts** 
+  - Factor - A factor is a number of mathematical expression that can divide another number or mathematical expression without leaving any remainders 
+  - Factorisation - The process of re-expressing an expression as a product of factors 
+
+
+
+
+
+
+
+<p style = "margin-bottom: 0px; font-size: 20px; ">**Unclassified Algebraic rules**</p>
+
+- $\left( a + b \right) \left( a - b \right) = a^2 - b^2$
+
 
