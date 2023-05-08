@@ -83,10 +83,10 @@
             - $\forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |f(x) \times g(x) - f(x)\times M + f(x)\times M - L \times M| < \epsilon$
           - So that we can separate out the last term as 
             - $\forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |f(x)| |g(x) - M| + |M| |f(x) - L| < \epsilon$
-          - We need to make the statement work by requiring each of the last two terms to be less than half of $\delta$:
+          - We need to make the statement work by requiring each of the last two terms to be less than half of $\epsilon$:
             - $\displaystyle \begin{aligned} |f(x)| |g(x) - M| &< \frac{\epsilon}{2} \\ |M| |f(x) - L| &< \frac{\epsilon}{2}\end{aligned}$
-          - We have to find a $\delta$ that make the statement work 
-            - For the second term
+          - We have to find a $\delta$ that make both statements work
+            - Find a $\delta$ that works for the second term 
               - To make 
                 - $\displaystyle |M| |f(x) - L| < \frac{\epsilon}{2}$
               - We can make 
@@ -94,9 +94,9 @@
               - However, there is a possibility that $|M| < 1$, which would not ensure $\displaystyle |M| |f(x) - L| < \frac{\epsilon}{2}$
               - Hence, we add one to the denominator to ensure that the denominator is always $≥ 2$:
                 - $\displaystyle |f(x) - L| < \frac{\epsilon}{2 \left[ |M| + 1\right]}$
-              - Consequently, we have to find a $\delta$ for $L$ for this condition
-                - $\displaystyle \lim_{x \rightarrow a}f(x) = L \\ \displaystyle ~~~~~ \forall \epsilon > 0, \exists \delta_1 > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta_1 \implies 0 < |f(x) - L| < \frac{\epsilon}{2 \left[ |M| + 1\right]}$
-            - For the first term 
+              - Consequently, the $\delta$ to meet this condition is $\delta_2$
+                - $\displaystyle \lim_{x \rightarrow a}f(x) = L \\ \displaystyle ~~~~~ \forall \epsilon > 0, \exists \delta_2 > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta_1 \implies 0 < |f(x) - L| < \frac{\epsilon}{2 \left[ |M| + 1\right]}$
+            - Find a $\delta$ that works for the first term
               - To make
                 - $\displaystyle |f(x)| |g(x) - M| < \frac{\epsilon}{2}$
               - We can make
@@ -109,11 +109,12 @@
                 - Hence, we can write it as
                   - $\displaystyle  |g(x) - M| < \frac{\epsilon}{2 |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}}$
                     - Note that because $|f(x)| < |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}$, $\frac{\epsilon}{2 |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}}$ is even smaller (and more conservative) than $\displaystyle \frac{\epsilon}{2 |f(x)|}$
-              - Consequently, we have to find a $\delta$ for this condition
-                - $\displaystyle \lim_{x \rightarrow a} g(x) = M \\ \displaystyle ~~~~~ \forall \epsilon > 0, \exists \delta_2 > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta_1 \implies 0 < |g(x) - L| < \frac{\epsilon}{2 |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}}$
-        - Now that we have 2 $\delta$s, we have to choose one that works for both case. Of course, the smaller one would ensure it works for both cases:
-          - Let $\delta = \min(\delta_1, \delta_2)$
-        - $\displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |f(x)| |g(x) - M| + |M| |f(x) - L| < \epsilon \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \left( |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}\right)\frac{\epsilon}{2 |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}}+ |M| \frac{\epsilon}{2 \left[ |M| + 1\right]}< \epsilon \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \frac{\epsilon}{2} + \frac{\epsilon}{2} < \epsilon$ <\details>
+                - Consequently, we have to find a $\delta$ for this condition
+                  - $\displaystyle \lim_{x \rightarrow a} g(x) = M \\ \displaystyle ~~~~~ \forall \epsilon > 0, \exists \delta_2 > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta_1 \implies 0 < |g(x) - L| < \frac{\epsilon}{2 |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}}$
+            - Now that we have 2 $\delta$s, we have to choose one that works for both case. Of course, the smaller one would ensure it works for both cases:
+              - Let $\delta = \min(\delta_1, \delta_2)$
+          - Now we have the a $\delta$ so that:
+            - $\displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |f(x)| |g(x) - M| + |M| |f(x) - L| < \epsilon \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \left( |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}\right)\frac{\epsilon}{2 |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}}+ |M| \frac{\epsilon}{2 \left[ |M| + 1\right]}< \epsilon \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \frac{\epsilon}{2} + \frac{\epsilon}{2} < \epsilon$ </details>
       - **The quotient law of limits**
         - **Mathematics**
           - $\displaystyle \lim_{x \rightarrow a}(\frac{1}{g})(x) = \frac{1}{\lim_{x \rightarrow a}g(x)} = \frac{1}{m} ~~ \text{if}~~ m ≠ 0$
