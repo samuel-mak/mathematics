@@ -51,8 +51,10 @@
         - If $x$ is close to $x_0$ and $y$ is close to $y_0$, then $x + y$ is close to $x_0 + y_0$, and $xy$ is close to $x_0y_0$, and $\frac{1}{y}$ is close to $\frac{1}{y_0}$ 
       - **The sum law of limits**
         - **Mathematics**
-          - If $\lim_{x \rightarrow a} f(x) = L$ and $\lim_{x \rightarrow a} g(x) = M$, then 
-          - $\displaystyle \lim_{x \rightarrow a}(f ± g)(x) = \lim_{x \rightarrow a} f(x) ± \lim_{x \rightarrow a}g(x) = l ± m$ 
+          - If 
+            - $\lim_{x \rightarrow a} f(x) = L$ and $\lim_{x \rightarrow a} g(x) = M$
+          - Then 
+            - $\displaystyle \lim_{x \rightarrow a}(f ± g)(x) = \lim_{x \rightarrow a} f(x) ± \lim_{x \rightarrow a}g(x) = L ± M$ 
         - <details><summary>**Proof**</summary>
           - Given that 
             - $\displaystyle \lim_{x \rightarrow a} = L \\ ~~~~~ \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |f(x) - L| < \epsilon \\ \displaystyle \lim_{x \rightarrow a} = M \\ ~~~~~ \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |g(x) - M| < \epsilon$
@@ -75,12 +77,15 @@
             
         - **The multiplicative law of limits**
           - **Mathematics**
-            - $\displaystyle \lim_{x \rightarrow a}(f \times g)(x) = \lim_{x \rightarrow a} f(x) \times \lim_{x \rightarrow a}g(x) = l \times m$
+            - If 
+              - $\lim_{x \rightarrow a} f(x) = L$ and $\lim_{x \rightarrow a} g(x) = M$
+            - Then
+              - $\displaystyle \lim_{x \rightarrow a}(f \times g)(x) = \lim_{x \rightarrow a} f(x) \times \lim_{x \rightarrow a}g(x) = L M$
           - <details><summary>**Proof**</summary>
             - We are trying to prove:
-              - $\displaystyle \lim_{x \rightarrow a}(f \times g)(x) = L \times M\\ ~~~~~  \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |f(x) \times g(x) - L \times M| < \epsilon$
+              - $\displaystyle \lim_{x \rightarrow a}(f g)(x) = LM\\ ~~~~~  \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |f(x) g(x) - L M| < \epsilon$
             - We can manipulate the last bit as
-              - $\forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |f(x) \times g(x) - f(x)\times M + f(x)\times M - L \times M| < \epsilon$
+              - $\forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |f(x) g(x) - f(x) M + f(x) M - L M| < \epsilon$
             - So that we can separate out the last term as 
               - $\forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |f(x)| |g(x) - M| + |M| |f(x) - L| < \epsilon$
             - We need to make the statement work by requiring each of the last two terms to be less than half of $\epsilon$:
@@ -103,23 +108,64 @@
                   - $\displaystyle  |g(x) - M| < \frac{\epsilon}{2 |f(x)|}$
                 - But we also need to turn $|f(x)|$ into a constant so that it can be worked with
                   - We know that 
-                    - $\displaystyle |f(x) - L| < \frac{\epsilon}{2 \left[ |M| + 1\right]}$
-                  - This means 
-                    - $\displaystyle |f(x)| < |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}$
+                    - $\begin{aligned} \displaystyle |f(x) - L| &< \frac{\epsilon}{2 \left[ |M| + 1\right]} \\ \displaystyle |f(x)| &< |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]} \end{aligned}$
                   - Hence, we can write it as
                     - $\displaystyle  |g(x) - M| < \frac{\epsilon}{2 |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}}$
                       - Note that because $|f(x)| < |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}$, $\frac{\epsilon}{2 |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}}$ is even smaller (and more conservative) than $\displaystyle \frac{\epsilon}{2 |f(x)|}$
-                  - Consequently, the $\delta$ for this condition is $\delta_1$ such that:
+                  - Consequently, the $\delta$ satisfies this condition is $\delta_1$ such that:
                     - $\displaystyle \lim_{x \rightarrow a} g(x) = M \\ \displaystyle ~~~~~ \forall \epsilon > 0, \exists \delta_1 > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta_1 \implies 0 < |g(x) - L| < \frac{\epsilon}{2 |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}}$
               - Now that we have 2 $\delta$s, we have to choose one that works for both case. Of course, the smaller one would ensure it works for both cases:
                 - Let $\delta = \min(\delta_1, \delta_2)$
             - Now we have the a $\delta$ so that:
-              - $\displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |f(x)| |g(x) - M| + |M| |f(x) - L| < \epsilon \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \left( |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}\right)\frac{\epsilon}{2 |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}}+ |M| \frac{\epsilon}{2 \left[ |M| + 1\right]}< \epsilon \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \frac{\epsilon}{2} + \frac{\epsilon}{2} < \epsilon$ 
+              - $\displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |f(x)| |g(x) - M| + |M| |f(x) - L| < \epsilon \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \left( |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}\right)\frac{\epsilon}{2 |L| + \frac{\epsilon}{2 \left[ |M| + 1\right]}}+ |M| \frac{\epsilon}{2 \left[ |M| + 1\right]}< \epsilon \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t}, \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \frac{\epsilon}{2} + \frac{\epsilon}{2} < \epsilon ~~~ \blacksquare$ 
             </details>
             
-        - **The quotient law of limits**
+        - **The inverse law of limits**
           - **Mathematics**
-            - $\displaystyle \lim_{x \rightarrow a}(\frac{1}{g})(x) = \frac{1}{\lim_{x \rightarrow a}g(x)} = \frac{1}{m} ~~ \text{if}~~ m ≠ 0$
+            - Given that
+              - $\displaystyle \lim_{x \rightarrow a} g(x) = M \\ \text{using the} ~ \epsilon - \delta ~ \text{definition of limits, that is:} \\ \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |g(x) - M| < \epsilon$
+            - Then
+              - $\displaystyle \lim_{x \rightarrow a}\left(\frac{1}{g}\right)(x) = \frac{1}{\lim_{x \rightarrow a}g(x)} = \frac{1}{M} ~~~~~\text{if}~ M ≠ 0 \\  \text{using the} ~ \epsilon - \delta ~ \text{definition of limits, that is:} \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \left|\frac{1}{g(x)} - \frac{1}{M}\right| < \epsilon$
+          - **Proof**
+            - Given that
+              - $\displaystyle \lim_{x \rightarrow a} g(x) = M \\ \text{using the} ~ \epsilon - \delta ~ \text{definition of limits, that is:} \\ \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |g(x) - M| < \epsilon ~~~~~ (1)$
+            - Proof that
+              - $\displaystyle \lim_{x \rightarrow a}\left(\frac{1}{g}\right)(x) = \frac{1}{\lim_{x \rightarrow a}g(x)} = \frac{1}{M} ~~~~~\text{if}~ M ≠ 0 \\  \text{using the} ~ \epsilon - \delta ~ \text{definition of limits, that is:} \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \left|\frac{1}{g(x)} - \frac{1}{M}\right| < \epsilon \\ \text{We can express this in a way that helps us prove it:}\\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \frac{|g(x) - M|}{|g(x)| |M|} < \epsilon \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \frac{|g(x) - M|}{|M|}\frac{1}{|g(x)|} < \epsilon ~~~~~ (2)$
+            - We can first work with this $\frac{1}{|g(x)|}$ part of $(2)$ through equation $(1)$
+              - Let's remind ourselves what $(1)$ is:
+                - $\forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |g(x) - M| < \epsilon ~~~~~ (1)$
+              - Consider letting $\epsilon = \frac{|M|}{2}$, then:
+                - $\exists \delta_1 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |g(x) - M| < \frac{|M|}{2}$
+                  - ***Notes***
+                    - We are letting $\epsilon = \frac{|M|}{2}$ because $\epsilon$ can be any arbitrary real number AND this value helps us prove $(2)$
+              - We can manipulate the last bit to make it look like $(2)$:
+                - First starting with:
+                  - $\epsilon = \frac{|M|}{2}, \exists \delta_1 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |g(x) - M| < \frac{|M|}{2}$
+                - We can switch between $g(x)$ and $M$:
+                  - $\epsilon = \frac{|M|}{2}, \exists \delta_1 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |M - g(x)| < \frac{|M|}{2}$
+                - We can add $|g(x)|$ to both sides:
+                  - $\epsilon = \frac{|M|}{2},  \exists \delta_1 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |M - g(x)| + |g(x)| < \frac{|M|}{2} + |g(x)|$
+                - We can then reverse the Triangle Inequality to get:
+                  - $\displaystyle \exists \delta_1 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |M - g(x) + g(x)| ≤ |g(x) - M| + |g(x)| < \frac{|M|}{2} + |g(x)| \\ \displaystyle  \exists \delta_1 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |M| ≤ |g(x) - M| + |g(x)| < \frac{|M|}{2} + |g(x)|$
+                - We can just delete the middle part and get:
+                  - $\displaystyle \exists \delta_1 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |M| < \frac{|M|}{2} + |g(x)| \\ \displaystyle \exists \delta_1 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |M| - \frac{|M|}{2} < |g(x)| \\ \displaystyle \exists \delta_1 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \frac{1}{|g(x)|} <  \frac{2}{|M|}$
+                - We can multiply both sides of the inequality by $\frac{|g(x) - M|}{|M|}$ (because this quantity is positive, it would not change the sign of the inequality)
+                  - $\displaystyle \exists \delta_1 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta_1 \implies 0 < \frac{|g(x) - M|}{|M|}  \frac{1}{|g(x)|} <  \frac{|g(x) - M|}{|M|} \frac{2}{|M|} \\ \displaystyle \exists \delta_1 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta_1 \implies 0 < \frac{|g(x) - M|}{|M|}  \frac{1}{|g(x)|} <  |g(x) - M| \frac{2}{|M|^2}$
+                - Now we need to prove that 
+                  - $\displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \frac{|g(x) - M|}{|M|}  \frac{1}{|g(x)|} <  |g(x) - M| \frac{2}{|M|^2} < \epsilon$
+                - Since we have proved 
+                  - $\displaystyle \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \frac{|g(x) - M|}{|M|}  \frac{1}{|g(x)|} <  |g(x) - M| \frac{2}{|M|^2} $
+                - We can focus on proving 
+                  - $\displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0  <  |g(x) - M| \frac{2}{|M|^2} < \epsilon$
+                - We can use what we know is true
+                  - $\displaystyle \lim_{x \rightarrow a} g(x) = M \\ \text{using the} ~ \epsilon - \delta ~ \text{definition of limits, that is:} \\ \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |g(x) - M| < \epsilon ~~~~~ (1)$
+                - We can let $\epsilon = \epsilon \frac{|M|^2}{2}$, then:
+                  - $\displaystyle \forall \epsilon > 0, \exists \delta_2 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta_2 \implies 0 < |g(x) - M| < \epsilon  \frac{|M|^2}{2} ~~~~~ (1)$
+                - Then if we multiply both sides by $\frac{2}{|M|^2} $, $\delta_2$ would still work and we get what we want in order to prove this shit 
+                  - $\displaystyle \forall \epsilon > 0, \exists \delta_2 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta_2 \implies 0 < |g(x) - M|\frac{2}{|M|^2} < \epsilon  \frac{|M|^2}{2}\frac{2}{|M|^2} \\ \displaystyle \forall \epsilon > 0, \exists \delta_2 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta_2 \implies 0 < |g(x) - M|\frac{2}{|M|^2} < \epsilon  $
+                - Now that we have 2 $\delta$s ($\delta_1$ and $\delta_2$), we will select one that ensure both of the above conditions to satisfy, of course, the smaller one would be the one, hence let $\delta = \min(\delta_1, \delta_2)$, then:
+                  - $\displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \frac{|g(x) - M|}{|M|}  \frac{1}{|g(x)|} <  |g(x) - M| \frac{2}{|M|^2} < \epsilon \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \frac{|g(x) - M|}{|M|}  \frac{1}{|g(x)|} < \epsilon ~~~~~ \blacksquare$
+    
         - **The constant law of limits**
           - **Mathematics**
             - $\lim_{x \rightarrow a}c = c$
