@@ -39,7 +39,7 @@
         - ***Notes**
           - It reads "$f(x)$ approaches $l$ as $x$ approaches $a$
   - **Precise definition**
-    - The function $f$ approaches the limit $l$ near $a$ is defined as the closeness around $a$ for any given closeness around $l$ with closeness defined as intervals around $l$ and $a$- Specifically, an interval around the limit of any given distance $\varepsilon$ between the limit and either of its boundaries always has a corresponding interval around $a$ with a certain distance $\delta$ between $a$ and either of its boundaries such that any values within the interval around $a$ is mapped by the function into values that is guaranteed to be within the aforementioned interval around the limit
+    - The function $f$ approaches the limit $l$ near $a$ is defined as the closeness around $a$ for any given closeness around $l$ with closeness defined as intervals around $l$ and $a$- Specifically, an interval around the limit of any given distance $\varepsilon$ between the limit and either of its boundaries always has a corresponding interval around $a$ with a certain distance $\delta$ between $a$ and either of its boundaries such that any values within the interval around $a$ is mapped by the function into values that is guaranteed to be within the aforementioned interval around the limit 
   - **Mathematics**
     - For every $\epsilon > 0$ there is some $\delta > 0$ such that, for all $x$, if $0 < |x - a| < \delta$, then it implies $|f(x) - l| < \varepsilon$ 
   - **Theories**
@@ -49,6 +49,7 @@
     - **The 3 Properties of Limits**
       - **Concept**
         - If $x$ is close to $x_0$ and $y$ is close to $y_0$, then $x + y$ is close to $x_0 + y_0$, and $xy$ is close to $x_0y_0$, and $\frac{1}{y}$ is close to $\frac{1}{y_0}$ 
+        - There are properties other than the three described below, e.g. quotient property, constant property, but all other properties stem from these three properties
       - **The sum law of limits**
         - **Mathematics**
           - If 
@@ -126,7 +127,7 @@
               - $\displaystyle \lim_{x \rightarrow a} g(x) = M \\ \text{using the} ~ \epsilon - \delta ~ \text{definition of limits, that is:} \\ \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |g(x) - M| < \epsilon$
             - Then
               - $\displaystyle \lim_{x \rightarrow a}\left(\frac{1}{g}\right)(x) = \frac{1}{\lim_{x \rightarrow a}g(x)} = \frac{1}{M} ~~~~~\text{if}~ M ≠ 0 \\  \text{using the} ~ \epsilon - \delta ~ \text{definition of limits, that is:} \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \left|\frac{1}{g(x)} - \frac{1}{M}\right| < \epsilon$
-          - **Proof**
+          - <details><summary>**Proof**</summary>
             - Given that
               - $\displaystyle \lim_{x \rightarrow a} g(x) = M \\ \text{using the} ~ \epsilon - \delta ~ \text{definition of limits, that is:} \\ \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < |g(x) - M| < \epsilon ~~~~~ (1)$
             - Proof that
@@ -165,12 +166,48 @@
                   - $\displaystyle \forall \epsilon > 0, \exists \delta_2 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta_2 \implies 0 < |g(x) - M|\frac{2}{|M|^2} < \epsilon  \frac{|M|^2}{2}\frac{2}{|M|^2} \\ \displaystyle \forall \epsilon > 0, \exists \delta_2 > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta_2 \implies 0 < |g(x) - M|\frac{2}{|M|^2} < \epsilon  $
                 - Now that we have 2 $\delta$s ($\delta_1$ and $\delta_2$), we will select one that ensure both of the above conditions to satisfy, of course, the smaller one would be the one, hence let $\delta = \min(\delta_1, \delta_2)$, then:
                   - $\displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \frac{|g(x) - M|}{|M|}  \frac{1}{|g(x)|} <  |g(x) - M| \frac{2}{|M|^2} < \epsilon \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{ s.t. } \forall x \in \mathbb{R}, 0 < |x - a| < \delta \implies 0 < \frac{|g(x) - M|}{|M|}  \frac{1}{|g(x)|} < \epsilon ~~~~~ \blacksquare$
-    
-        - **The constant law of limits**
-          - **Mathematics**
-            - $\lim_{x \rightarrow a}c = c$
-  
+                  </details>
 
+  - **One-sided limits**
+    - **Concept**
+      - The difference between ordinary limits and one-sided limits is that whereas ordinary limits describes how a function approaches the limit as $x$ approaches $a$ from either side (hence, ordinary limits are also known as two-sided limits), one-sided limits describes how a function approaches the limit from either side as $x$ approaches $a$ from one side
+    - **Left-sided limits**
+      - **Concept**
+        - Left-sided limit is a one-sided limit that describes how a function approaches the limit as $x$ goes up towards $a$ from the left of $a$
+      - **Mathematics**
+        - $\displaystyle \lim_{x \rightarrow a^-} f(x) = L ~~~~~\text{or}~~~~~ \lim_{x \uparrow a} f(x) = L ~~~~~\text{or}~~~~~ \lim_{x \nearrow a} f(x) = L \\ \text{using the}~ \epsilon- \delta ~\text{defiinition of limits, this means that} \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t.}, \forall x \in \mathbb{R}, 0 < a - x < \delta \implies 0 < |f(x) - L| < \epsilon$
+    - **Right-sided limits**
+      - **Concept**
+        - Right-sided limit is a one-sided limit that describes how a function approaches the limit from either side as $x$ goes down towards $a$ from the right of $a$
+      - **Mathematics**
+        - $\displaystyle \lim_{x \rightarrow a^+} f(x) = L ~~~~~\text{or}~~~~~ \lim_{x \downarrow a} f(x) = L ~~~~~\text{or}~~~~~ \lim_{x \searrow a} f(x) = L \\ \text{using the}~ \epsilon- \delta ~\text{defiinition of limits, this means that} \\ \displaystyle \forall \epsilon > 0, \exists \delta > 0, \text{s.t.}, \forall x \in \mathbb{R}, 0 < x - a < \delta \implies 0 < |f(x) - L| < \epsilon$
+
+
+- **Continuity of functions**
+  - **General Concept**
+  - **Other shits**
+    - This idea made me think of the song "Connected" by Gojira
+  - **Definition using limits**
+    - **Concept**
+      - Continuity is defined at particular points of the domain of the function such that the function $f$ is continuous at $x = a$ if $f$ approaches the same one value $f(a)$ from both left and right side as $x$ approaches $a$ from both left and right side. 
+      - In other words, it means that $f(x)$ can be made as close to $f(a)$ as possible as $x$ approaches $a$ from both sides. Thinking alternatively, this means that $f(a)$ is surrounded from both sides by an infinite number of points ($f(x)$), that is, a continuum of $f(x)$ around $f(a)$, there is absolutely no gap around $f(x)$. Another way of thinking is that the part of $f$ that is on the left side of $f(a)$ is continuously connected with the part of $f$ that is on the right side of $f(a)$, that is, there is absolutely no gaps between the part of $f$ that is on the left and right side of $f(a)$, in other words, there are an infinite number of points between the part of $f$ that is on the left and right side of $f(a)$, in other words, $f(a)$ is infinitesimally close to the part of $f$ on the left and right side of $f(a)$
+      - For a function to be continuous, the function has to be continuous at every possible points in the domain of the function
+    - **Mathematics**
+      - The function $f$ is continuous at $a$ if $\displaystyle \lim_{x \rightarrow a}f(x) = f(a)$
+        - ***Notes***
+          - The definition of continuity of a function at a particular point is similar to the ordinary definition of limits of a function at a particular point, except that $f(a)$ replaces $L$, this is a way of saying that $a$ has to be in the domain of $f$ (i.e. $f$ needs to be defined at $x = a$)
+          - This already implies that 
+            - The limit $\lim_{x \rightarrow a}$
+  - **Properties of continuous functions**
+    - **Additive continuity**
+      - **Concept**
+      - **Mathematics**
+        - If 
+          - $f$ and $g$ are continuous at $a$, that is
+            - $\displaystyle \lim_{x \rightarrow a}f(x) = f(a) ~~~ \text{and}~~~ \lim_{x \rightarrow a}g(x) = g(a)$
+        - Then 
+          - $f+g$ is continuous at $a$, that is
+            - $\lim_{x \rightarrow a}(f + g)(x) = (f+g)(a)$
 
     
     
