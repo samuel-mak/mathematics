@@ -274,7 +274,7 @@
         - Then 
           - There is some number $y$ and $k$ in $[a, b]$ such that $f(y) ≤ f(x) ≤ f(k)$
           
-          
+           
             
             
             
