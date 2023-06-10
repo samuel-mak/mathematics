@@ -184,33 +184,113 @@
 
 
 - **Continuity of functions**
-  - **General Concept**
-  - **Other shits**
-    - This idea made me think of the song "Connected" by Gojira
-  - **Definition using limits**
-    - **Concept**
-      - Continuity is defined at particular points of the domain of the function such that the function $f$ is continuous at $x = a$ if $f$ approaches the same one value $f(a)$ from both left and right side as $x$ approaches $a$ from both left and right side. 
-      - In other words, it means that $f(x)$ can be made as close to $f(a)$ as possible as $x$ approaches $a$ from both sides. Thinking alternatively, this means that $f(a)$ is surrounded from both sides by an infinite number of points ($f(x)$), that is, a continuum of $f(x)$ around $f(a)$, there is absolutely no gap around $f(x)$. Another way of thinking is that the part of $f$ that is on the left side of $f(a)$ is continuously connected with the part of $f$ that is on the right side of $f(a)$, that is, there is absolutely no gaps between the part of $f$ that is on the left and right side of $f(a)$, in other words, there are an infinite number of points between the part of $f$ that is on the left and right side of $f(a)$, in other words, $f(a)$ is infinitesimally close to the part of $f$ on the left and right side of $f(a)$
-      - For a function to be continuous, the function has to be continuous at every possible points in the domain of the function
-    - **Mathematics**
-      - The function $f$ is continuous at $a$ if $\displaystyle \lim_{x \rightarrow a}f(x) = f(a)$
-        - ***Notes***
-          - The definition of continuity of a function at a particular point is similar to the ordinary definition of limits of a function at a particular point, except that $f(a)$ replaces $L$, this is a way of saying that $a$ has to be in the domain of $f$ (i.e. $f$ needs to be defined at $x = a$)
-          - This already implies that 
-            - The limit $\lim_{x \rightarrow a}$
+  - **Limits definition of continuous function**
+    - **Continuity of $f$ at $x = a$**
+      - **Concept**
+        - Continuity is defined at particular points in the domain of the function such that the function $f$ is continuous at $x = a$ means that $f(a)$ must be defined, that is, $a$ must be in the domain of $f$, and $f$ approaches (can be infinitesimally close to) the same value $f(a)$ from both sides as $x$ approaches (can be infinitesimally close to) $a$ from both sides in the domain of $f$.
+        - A way of thinking this is that $f(a)$ must be defined (so there is a point at $x = a$) and $f$ on the immediate left of $f(a)$ and $f$ on the immediate right of $f$ is infinitesimally close to $f(a)$, that is, there is absolutely no gaps between them (so the three points are connected completed without any gaps)
+      - **Mathematics**
+        - The function $f$ is continuous at $a$ only if $\displaystyle \lim_{x \rightarrow a}f(x) = f(a)$
+          - ***Notes***
+            - The mathematical expression is a way of saying that for a function to be continuous at $x = a$, all of the following must be true 
+              - $f$ must be defined at $x = a$ 
+              - The two-sided limit $\displaystyle \lim_{x \rightarrow a}f(x)$ exists
+    - **Continuity of $f$ on an interval**
+      - **Concept**
+        - Building on the original definition of continuity, it is extended to define the continuity of a function on an interval (at all points in an interval) 
+        - The interval can be an open or closed interval, but their definitions differ 
+      - **Continuity of $f$ on an opened interval $(a, b)$**
+        - **Concept**
+          - The continuity of a function $f$ at every point in an open interval $(a, b)$
+        - **Mathematics**
+          - The function $f$ is continuous on $(a, b)$ if $\displaystyle \lim_{x \rightarrow c}f(x) = f(c) ~~ \forall c \in (a, b)$
+      - **Continuity of $f$ on a closed interval $[a, b]$**
+        - **Concept**
+          - The continuity of a function $f$ at every point in a closed interval $[a, b]$
+        - **Mathematics**
+          - The function $f$ is continuous on $[a, b]$ if $\displaystyle \lim_{x \rightarrow c}f(x) = f(a) ~~ \forall c \in (a, b)$ and $\displaystyle \lim_{x \rightarrow a^+}f(x) = f(a) ~~\text{and}~~ \lim_{x \rightarrow b^-}f(x) = f(b)$
+
   - **Properties of continuous functions**
-    - **Additive continuity**
+    - **The sum law of continuity**
       - **Concept**
       - **Mathematics**
         - If 
-          - $f$ and $g$ are continuous at $a$, that is
-            - $\displaystyle \lim_{x \rightarrow a}f(x) = f(a) ~~~ \text{and}~~~ \lim_{x \rightarrow a}g(x) = g(a)$
+          - Functions $f$ and $g$ are continuous at $a$
+            - Using the limits definition of continuity, that is: $\displaystyle \lim_{x \rightarrow a}f(x) = f(a) ~~~ \text{and}~~~ \lim_{x \rightarrow a}g(x) = g(a)$
         - Then 
-          - $f+g$ is continuous at $a$, that is
-            - $\lim_{x \rightarrow a}(f + g)(x) = (f+g)(a)$
-
-    
-    
+          - $f+g$ is continuous at $a$
+            - Using the limits definition of continuity, that is: $\displaystyle \lim_{x \rightarrow a}(f + g)(x) = (f+g)(a)$
+    - **The product law of continuity**
+      - **Concept**
+      - **Mathematics**
+        - If 
+          - Functions $f$ and $g$ are continuous at $a$
+            - Using the limits definition of continuity, that is: $\displaystyle \lim_{x \rightarrow a}f(x) = f(a) ~~~ \text{and}~~~ \lim_{x \rightarrow a}g(x) = g(a)$
+        - Then 
+          - $fg$ is continuous at $a$
+            - Using the limits definition of continuity, that is: $\displaystyle \lim_{x \rightarrow a}(f  g)(x) = (fg)(a)$
+    - **The reciprocal law of continuity**
+      - **Concept**
+      - **Mathematics**
+        - If 
+          - Function $f$ is continuous at $a$
+            - Using the limits definition of continuity, that is: $\displaystyle \lim_{x \rightarrow a}f(x) = f(a)$
+        - Then 
+          - $\displaystyle \frac{1}{f}$ is continuous at $a$ if $g(a) ≠ 0$
+            - Using the limits definition of continuity, that is: $\displaystyle \lim_{x \rightarrow a}\left(\frac{1}{f}\right)(x) = \frac{1}{f(a)} ~~ \text{if}~~ g(a) ≠ 0$
+    - **The composition law of continuity**
+      - **Concept**
+      - **Mathematics**
+        - If 
+          - Function $g$ is continuous at $a$ and function $f$ is continuous at $g(a)$
+            - Using the limits definition of continuity, that is: $\displaystyle \lim_{x \rightarrow a}g(x) = g(a) ~~~ \text{and}~~~ \lim_{x \rightarrow a}f \circ g = \lim_{x \rightarrow a}f(g(x)) = f(g(a))$
+        - Then 
+          - $f \circ g$ is continuous at $a$
+            - Using the limits definition of continuity, that is: $\displaystyle \lim_{x \rightarrow a}(f \circ g)(x) = (f\circ g)(a)$
+    - **Bolzano's Theorem**
+      - **Concept**
+        - If a function $f$ that is continuous on a closed interval $[a,b]$ has opposite signs at the boundaries in that interval, then there is some $x$ in $[a,b]$ such that $f(x) = 0$
+      - **Mathematics**
+        - If
+          - $f$ is continuous on $[a, b]$ and 
+          - $f(a) < 0 < f(b)$ or $f(a) > 0 > f(b)$
+        - Then    
+          - There is some $x \in [a, b]$ s.t. $f(x) = 0$
+    - **Boundedness Theorem**
+      - **Concept**   
+      - **Mathematics**
+        - If 
+          - $f$ is continuous on $[a, b]$ 
+        - Then  
+          - There is some number $M$ and $N$ such that $M ≤ f(x) ≤ N ~ ~ \forall x \in [a, b]$  (i.e. $f$ is bounded on $[a, b]$)
+            - ***Notes***
+              - This does not mean that $M$ and $N$ are the minimum and maximum value, it is only saying that $f$ is bounded within a frame 
+    - **Extreme Value Theorem**
+      - **Concept**
+        - If $f$ is continuous on $[a, b]$, there is an absolute minimum and maximum in that interval 
+      - **Mathematics**
+        - If 
+          - $f$ is continuous on $[a, b]$
+        - Then 
+          - There is some number $y$ and $k$ in $[a, b]$ such that $f(y) ≤ f(x) ≤ f(k)$
+            
+            
+            
+    - **Types of discontinuity (THIS PART NOT DEVELOPED)**
+      - **Removable discontinuity**
+        - **Concept**
+          - The function $f$ has a removable discontinuity at $x = a$ means that the two-sided limit $\displaystyle \lim_{x \rightarrow a}f(x)$ exists but does not equal to $f(a)$ ($f$ is defined at $x = a$ too)
+        - **Mathematics**
+          - $\displaystyle \lim_{x \rightarrow a} f(x) ≠ f(a)$
+    - **Jump Discontinuity**
+      - **Concept**
+        - The function $f$ has a jump discontinuity at $x = a$ means that both the left and right sided limits exist ($\displaystyle \lim_{x \rightarrow a^-}f(x) = L_1 ~~~\text{and}~~~  \lim_{x \rightarrow a^+}f(x) = L_2$) but are not equal ($L_1 ≠ L_2$) (also remember that $f$ must be defined at $x = a$ but it could be any value)
+      - **Mathematics**
+        - $\displaystyle \lim_{x \rightarrow a^-}f(x) = L_1 ≠  \lim_{x \rightarrow a^+}f(x) = L_2$
+    - **Essential Discontinuity**
+      - **Concept**
+        - The function $f$ has an essential discontinuity at $x = a$ means that $f(x)$ as $x$ approaches $a$ from one side increasingly becomes more far apart to $f(x)$ as $x$ approaches $a$ from the other side 
+            
  Some concepts    
       - **Concept**
     - The most extreme value of the output of a function (plural is extrema)
