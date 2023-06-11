@@ -256,23 +256,79 @@
           - $f(a) < 0 < f(b)$ or $f(a) > 0 > f(b)$
         - Then    
           - There is some $x \in [a, b]$ s.t. $f(x) = 0$
+    - **Intermediate Value Theorem**
+      - **Concept**
+        - A generalisation of Bolzano's theorem
+      - **Mathematics**
+        - If
+          - $f$ is continuous on $[a, b]$ and 
+          - $f(a) < c < f(b)$ or $f(a) > c > f(b)$
+        - Then 
+          - $\exists x \in [a, b] ~~ \text{s.t.}~~ f(x) = c$
+      - **Applications**
+        - **Proving a function has a root**
+          - **Proof that a polynomial has a root**
+            - **Hypothesis** 
+              - If $n$ is odd, then a polynomial equation in the form $x^n + a_{a-1}x^{n-1} + a_{n-2}x^{n-2} + \cdots + a_0 = 0$ has at least one real root (in other words, $\exists x \in [x_1, x_2]$ s.t. $f(x) = x^n + a_{a-1}x^{n-1} + a_{n-2}x^{n-2} + \cdots + a_0 = 0$)
+            - **Proof**
+              - We need to prove that the function is sometimes negative and sometimes positive 
+                - The function in consideration
+                  - $\begin{align} \displaystyle f(x) &= x^n + a_{a-1}x^{n-1} + a_{n-2}x^{n-2} + \cdots + a_0 \\ \displaystyle &= x^n\left( 1 + \frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + \cdots + \frac{a_{0}}{x^n} \right) \end{align}$
+                - Let's isolate $\frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + \cdots + \frac{a_{0}}{x^n}$ 
+                - By the Triangle Inequality:
+                  - $\displaystyle \left|\frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + \cdots + \frac{a_{0}}{x^n}\right| ≤ \frac{|a_{n-1}|}{|x|} + \frac{|a_{n-2}|}{|x^2|} + \cdots + \frac{|a_{0}|}{|x^n|}$
+                - If we choose an $x$ s.t. $|x| > 1, 2n|a_{n-1}|, 2n|a_{n-2}|, \cdots, 2n|a_0|$
+                - Then $\displaystyle \frac{a_{n-k}}{x^k} < \frac{a_{n-k}}{x} < \frac{|a_{n-k}|}{2n|a_{n-k}|} = \frac{1}{2n}$
+                - This means that 
+                  - $\displaystyle \left|\frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + \cdots + \frac{a_{0}}{x^n}\right| ≤ \frac{|a_{n-1}|}{|x|} + \frac{|a_{n-2}|}{|x^2|} + \cdots + \frac{|a_{0}|}{|x^n|} < \sum_{i = 1}^{n}{\frac{1}{2n}} = \frac{n}{2n} = \frac{1}{2}$
+                - Simplify that a bit
+                  - $\displaystyle \left|\frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + \cdots + \frac{a_{0}}{x^n}\right| <  \frac{1}{2}$
+                - Relaxing the absolute bar, this means that 
+                  - $\displaystyle -\frac{1}{2} < \frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + \cdots + \frac{a_{0}}{x^n} <  \frac{1}{2}$
+                - We an ignore the last term: 
+                  - $\displaystyle -\frac{1}{2} < \frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + \cdots + \frac{a_{0}}{x^n}$
+                - Now add 1 to both sides: 
+                  - $\begin{align} \displaystyle 1 - \frac{1}{2} &< 1 + \frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + \cdots + \frac{a_{0}}{x^n} \\ \frac{1}{2} &< 1 + \frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + \cdots + \frac{a_{0}}{x^n}\end{align}$
+                - So to summarise
+                  - If we choose $x$ s.t. $|x| > 1, 2n|a_{n-1}|, 2n|a_{n-2}|, \cdots, 2n|a_0|$
+                  - Then $1 + \frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + \cdots + \frac{a_{0}}{x^n} > \frac{1}{2}$ (that is, it is always positive)
+                - Now multiplying both sides by $x^n$, this also implies that 
+                  - If 
+                    - We choose an $x_1$ s.t. it $|x| > 1, 2n|a_{n-1}|, 2n|a_{n-2}|, \cdots, 2n|a_0|$ and $x_1 > 0$
+                  - Then
+                    - $\displaystyle  f(x) = x_1^n\left(1 + \frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + \cdots + \frac{a_{0}}{x^n}\right)  > \frac{x_1^n}{2} $
+                      - ***Notes***
+                        - Because multiplying both sides in an inequality by a positive number would not change inequality sign
+                  - Meaning that 
+                    - $f(x) > 0$
+                  - And if 
+                    - We choose an $x_2$ s.t. it $|x| > 1, 2n|a_{n-1}|, 2n|a_{n-2}|, \cdots, 2n|a_0|$ and $x_2 < 0$
+                  - Then 
+                    - $\displaystyle  f(x) = x_2^n\left(1 + \frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + \cdots + \frac{a_{0}}{x^n}\right)  < \frac{x_2^n}{2} $
+                      - ***Notes***
+                        - The inequality sign flips because both sides are multiplied by a negative number 
+                  - Meaning that 
+                    - $f(x) < 0$
+              - Now that we have proved that $f(x)$ is positive when $x = x_1$ and negative when $x = x_2$, by the Intermediate Value Theorem, we conclude that there is an $x \in [x_1, x_2]$ s.t. $f(x) = 0 ~~~ \blacksquare$
+                      
     - **Boundedness Theorem**
       - **Concept**   
       - **Mathematics**
         - If 
           - $f$ is continuous on $[a, b]$ 
         - Then  
-          - There is some number $M$ and $N$ such that $M ≤ f(x) ≤ N ~ ~ \forall x \in [a, b]$  (i.e. $f$ is bounded on $[a, b]$)
+          - There is some number $N_1$ and $N_2$ such that $N_1 ≤ f(x) ≤ N_2 ~ ~ \forall x \in [a, b]$  and 
+          - There is some number $N = \max(|N_1|, |N_2|) ~~\text{s.t.}~~ |f(x)| ≤ K ~ ~ \forall x \in [a, b]$
             - ***Notes***
-              - This does not mean that $M$ and $N$ are the minimum and maximum value, it is only saying that $f$ is bounded within a frame 
+              - This does not mean that $N_1$ and $N_2$ are the minimum and maximum value, it is only saying that $f$ is bounded within a frame 
     - **Extreme Value Theorem**
       - **Concept**
-        - If $f$ is continuous on $[a, b]$, there is an absolute minimum and maximum in that interval 
+        - If $f$ is continuous on $[a, b]$, then there is an absolute minimum and maximum in that interval 
       - **Mathematics**
         - If 
           - $f$ is continuous on $[a, b]$
         - Then 
-          - There is some number $y$ and $k$ in $[a, b]$ such that $f(y) ≤ f(x) ≤ f(k)$
+          - There is at least one number $y \in [a, b]$ and at least one number $z \in [a, b]$ such that $f(y) ≤ f(x) ≤ f(z) ~~ \forall x\in[a, b]$ 
           
            
             
